@@ -1,3 +1,5 @@
+#Load relevant libraries	
+library(ggplot2)
 
 #Load datasets into dataframes
 S1EP <- as.data.frame(read.csv("G:/Learning/FredTrotter/MU_EHR_result_replication/view_for_stats_S1_EP.csv"))
@@ -11,3 +13,4 @@ S1EH$eaccess_c <- as.numeric(as.character(S1EH$eaccess_c))
 S1EP$eaccess_c <- as.numeric(as.character(S1EP$eaccess_c))
 S2EP$VDT_c <- as.numeric(as.character(S2EP$VDT_c))
 S2EH$VDT_c <- as.numeric(as.character(S2EH$VDT_c))
+
