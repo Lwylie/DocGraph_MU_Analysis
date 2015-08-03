@@ -14,3 +14,10 @@ S1EP$eaccess_c <- as.numeric(as.character(S1EP$eaccess_c))
 S2EP$VDT_c <- as.numeric(as.character(S2EP$VDT_c))
 S2EH$VDT_c <- as.numeric(as.character(S2EH$VDT_c))
 
+#Since we want to test if there is significant variance in attestation by vendor, an ANOVA test seems proper
+S1EH_ANOVA <- aov(eaccess_c ~ vendor, data = S1EH)
+S1EP_ANOVA <- aov(eaccess_c ~ vendor, data = S1EP)
+S2EH_ANOVA <- aov(VDT_c ~ vendor, data = S2EH)
+S2EP_ANOVA <- aov(VDT_c ~ vendor, data = S2EP)
+
+#It looks like all of our P-values are significant, so we can reject or H0 of equal means among vendors
